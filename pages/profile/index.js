@@ -182,7 +182,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '闲暇时间消化零散知识，线上互撩的随身忆了解一下？',
+      path: '/pages/index/index',
+      imageUrl: 'https://7465-test-940daf-1257680529.tcb.qcloud.la/demo1.png?sign=03800fadb75c68f5bfda19d44619ef3d&t=1538741837'
+    }
   },
   handlefollow: function (e) {
     //follow为1、3传0，2、4传1。

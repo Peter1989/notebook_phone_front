@@ -89,11 +89,11 @@
         </view>
         <view class="secretcode">
           <text class="input-title">密码</text>
-          <input class="signup-secretcode-input" type="text" password="true" maxlength="20" bindinput="bindSecretCode" placeholder="密码长度为6~20位"/>
+          <input class="signup-secretcode-input" type="text" password="true" maxlength="20" bindinput="bindPassword" placeholder="密码长度为6~20位"/>
         </view>
         <view class="makesureSecretcode">
           <text class="input-title">确认</text>
-          <input class="makesureSecretcode-input" type="text" password="true" maxlength="20" bindinput="bindSecretCodeAgain" placeholder="请再次确认密码"/>
+          <input class="makesureSecretcode-input" type="text" password="true" maxlength="20" bindinput="bindPasswordAgain" placeholder="请再次确认密码"/>
         </view>
         <view class="tips" wx:if="{{showTips}}">{{tips}}</view>
         <view class="button-wrap">
