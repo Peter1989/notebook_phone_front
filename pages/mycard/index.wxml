@@ -38,7 +38,7 @@
         <view class="card-author-box">
           <view class="markpos">
             <view class="mark" bindchange="switch1Change" catchtap="handleauthor">
-            <image wx:if="{{item.show && item.txtStyle === 'left:0rpx'}}" src="../../assets/leftslide.png" class="leftslide" bindtap=""></image>
+            <image wx:if="{{item.show && item.txtStyle !== 'left:0rpx'}}" src="../../assets/leftslide.png" class="leftslide" bindtap=""></image>
             <text wx:if="{{item.tag}}" class="card-author" id="{{index}}" catchtap="handleauthor">{{item.tag}}</text>
             <image wx:if="{{item.mark === '0'}}" catchtap="starMark" id="{{index}}" src="../../assets/unstar.png" class="star"/>
             <image wx:if="{{item.mark === '1'}}" catchtap="starMark" id="{{index}}" src="../../assets/star.png" class="star"/>
@@ -55,13 +55,18 @@
         <!-- <textarea class="card-content" disabled="true" auto-height="true" maxlength="1000" value="{{item.answer_text}}" wx:if="{{item.show}}" space="{{true}}"></textarea> -->
         <rich-text class="card-content" wx:if="{{item.show}}" nodes="{{item.answer_text}}"></rich-text>
         <view class="option-line">
-          <view></view>
+          
           <view wx:if="{{status === 'stadying'}}" class="markwrap" catchtap="changeStatus" id="{{index}}">
-          <text wx:if="{{!loading && item.status === '1'}}"class="master">已掌握</text><switch checked="{{!loading && item.status === '1'}}"/>
+            <switch checked="{{!loading && item.status === '1'}}"/>
+            <text wx:if="{{!loading && item.status === '1'}}"class="master">已掌握</text>
           </view>
+
           <view wx:if="{{status === 'master'}}" class="markwrap" id="{{index}}" catchtap="changeStatus">
-            <text wx:if="{{!loading && item.status === '0'}}"class="master">学习中</text><switch checked="{{!loading && item.status === '0'}}"/>
+            <switch checked="{{!loading && item.status === '0'}}"/>
+            <text wx:if="{{!loading && item.status === '0'}}"class="master">学习中</text>
           </view>
+
+          <view></view>
         </view>
       </view>
     </view>

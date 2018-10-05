@@ -246,10 +246,11 @@ page {
 .markwrap{
   margin-top: 10rpx;
   width: 250rpx;
-  display: flex;
+  text-align: left;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 .markpos{
   display: inline-block;

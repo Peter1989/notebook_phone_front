@@ -31,7 +31,7 @@
         <view class="card-author-box">
           <view class="markpos">
             <view class="mark" bindchange="switch1Change" catchtap="handleauthor">
-            <image wx:if="{{item.txtStyle === 'left:0rpx'}}" src="../../../assets/leftslide.png" class="leftslide" bindtap=""></image>
+            <image wx:if="{{item.txtStyle !== 'left:0rpx'}}" src="../../../assets/leftslide.png" class="leftslide" bindtap=""></image>
             <text class="card-author" id="{{index}}" wx:if="{{item.tag}}" catchtap="handleauthor">{{item.tag}}</text>
             <image wx:if="{{item.mark === '0'}}" catchtap="starMark" id="{{index}}" src="../../../assets/unstar.png" class="star"/>
             <image wx:if="{{item.mark === '1'}}" catchtap="starMark" id="{{index}}" src="../../../assets/star.png" class="star"/>
