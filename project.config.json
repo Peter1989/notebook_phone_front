@@ -11,14 +11,14 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
+	"libVersion": "2.3.0",
 	"appid": "wxf6aea123cc59e308",
 	"projectname": "%E9%9A%8F%E8%BA%AB%E5%BF%86",
-	"svr": "",
-	"client": "",
-	"qcloudRoot": "",
-	"miniprogramRoot": "",
-	"pluginRoot": "",
+	"svr": "/",
+	"client": "/",
+	"qcloudRoot": "/",
+	"miniprogramRoot": "/",
+	"pluginRoot": "/",
 	"scripts": {},
 	"condition": {
 		"search": {

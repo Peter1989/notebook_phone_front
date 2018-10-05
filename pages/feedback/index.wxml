@@ -1,4 +1,6 @@
 <view class="container">
-  <image src="cloud://test-940daf.7465-test-940daf/qrcode.png" class="qrcodepic"></image>
+  <view class="qrcodepic"><official-account></official-account></view>
   <text class="tipwords">欢迎截图扫描关注公众号，在公众号中提供反馈～</text>
+  <image src="cloud://test-940daf.7465-test-940daf/qrcode.png" class="qrcodepic"></image>
+  
 </view>
