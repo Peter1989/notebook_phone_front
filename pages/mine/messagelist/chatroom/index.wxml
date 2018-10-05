@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="user-info-wrap">
+    <textarea class="messageclass" fixed="true" value="{{message}}" bindinput="bindTextinput" auto-height bindlinechange="bindlinechange" placeholder="请输入私信内容"/>
+    <view class="send-button-wrapper">
+      <button class="send-button" bindtap="sendmessage" type="primary" size="mini">发送</button>
+    </view>
+  </view>
+  <view class="card-wrap" style="margin-top:{{height}}">
+    <view class="card">
+      <view class="card-wrapper" wx:for="{{messageList}}" wx:key="item.id">
+        <view class="{{item.isself === true ? 'card-author-box-right' : 'card-author-box-left'}}">
+        <view class="info-wrapper">
+          <view class="info-line">
+            <image class="headpic" src="{{item.headpic}}"></image>
+            <text class="card-author" catchtap="handleauthor">{{item.username}}</text>
+          </view>
+        </view>
+        </view>
+        <view class="card-title" data-id="{{item.id}}">{{item.message}}</view>
+        <view class="info-bar">
+          <text class="item-date">{{item.datetime}}</text>
+          <view wx:if="{{item.isself}}" class="delete-button">
+            <button data-id="{{item.id}}" bindtap="delete" size="mini">删除</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text wx:if="{{messageList.length === 0}}" class="nomore">和对方还没有站内信～</text>
+  <text wx:if="{{nomore && messageList.length !== 0}}" class="nomore">已经没有站内信～</text>
+</view>

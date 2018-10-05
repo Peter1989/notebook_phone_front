@@ -1,0 +1,21 @@
+
+<view class="container">
+  <form>
+    <view class="form-item">
+      <view class="belong-item-title">所属分类</view>
+      <picker mode ="multiSelector" bindchange="bindPickerChange" bindcolumnchange="bindColumnChange" value="{{multiIndex}}" range="{{multiArr}}" range-key='tagname' class="title-input-tag">
+        <text wx:if="{{!currClass}}">选择分类</text>
+        <text wx:if="{{currClass}}" class="level-one-name">{{currClass}}</text>
+      </picker>
+    </view>
+    <view class="form-item">
+      <view class="item-title">名称</view>
+      <input class="title-input" placeholder='请输入标签分类名称' placeholder-class='title-placeholder' value="{{tagName}}" bindinput="bindTagName"></input>
+    </view>
+  </form>
+  <view class="submit-button-wrapper">
+    <view class="submit-button-box">
+      <button class="submit-button" type="primary" size="mini" bindtap="submit">提 交</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,91 @@
+page {
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.container{
+  position: fixed;
+  top: 0rpx;
+}
+
+.mine-wrapper{
+  width: 750rpx;
+  height: 180rpx;
+  background: #fff;
+  border-bottom: 10rpx #eee solid;
+  border-top: 10rpx #eee solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headinfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-wrapper{
+  max-width: 750rpx;
+  background: #fff;
+  border-bottom: 1rpx #eee solid;
+  border-top: 1rpx #eee solid;
+}
+
+.friends-item{
+  width: 750rpx;
+  height: 120rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.headpic{
+  display: block;
+  line-height: 150rpx;
+  height: 150rpx;
+  width: 150rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  border-radius: 10rpx;
+}
+
+.gomore{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 15rpx;
+  margin-right: 20rpx;
+}
+
+.itempic{
+  display: inline-block;
+  line-height: 100rpx;
+  height: 70rpx;
+  width: 70rpx;
+  margin-left: 50rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+}
+
+.friends-divide{
+  width: 720rpx;
+  height: 2rpx;
+  background-color: #F6F6F6;
+  margin: 0 0 0 auto;
+}
+.nickname{
+  font-size: 40rpx;
+}
+.funcname{
+  margin-left: 20rpx;
+}
+
+.tag-tips{
+  margin-left: 20rpx;
+  color: red;
+}

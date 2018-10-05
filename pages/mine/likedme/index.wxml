@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="friends-item-wrapper clear-margin-top">
+    <view wx:for="{{friendsList}}" wx:key="item.uid">
+      <view class="friends-divide" wx:if="{{index > 0}}"></view>
+      <view class="friends-item">
+        <view class="picandname" bindtap="gotouser" data-uid="{{item.uid}}">
+          <image class="headpic" src="{{item.headpic}}"></image>
+          <text class="username">{{item.username}}</text>
+        </view>
+        <text bindtap="gotoquestion" data-qid="{{item.qid}}" class="title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{friendsList.length === 0}}" class="nomore">您现在还没有收到点赞，先去添加知识点吧～</view>
+</view>

@@ -1,0 +1,102 @@
+page {
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.container{
+  position: fixed;
+  top: 0rpx;
+}
+
+.item-wrapper{
+  max-width: 750rpx;
+  background: #fff;
+  border-bottom: 1rpx #eee solid;
+  border-top: 20rpx #eee solid;
+}
+
+.nickname{
+  margin-left: 50rpx;
+}
+
+.friends-item{
+  width: 750rpx;
+  height: 120rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headpic-item{
+  width: 750rpx;
+  height: 150rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headpic{
+  display: block;
+  line-height: 120rpx;
+  height: 120rpx;
+  width: 120rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  border-radius: 8rpx;
+}
+.contentinfo{
+  color:#888;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.item-tomore{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.gomore{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 15rpx;
+  margin-right: 20rpx;
+}
+
+.itempic{
+  display: inline-block;
+  line-height: 100rpx;
+  height: 70rpx;
+  width: 70rpx;
+  margin-left: 15rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+}
+
+.friends-divide{
+  width: 720rpx;
+  height: 2rpx;
+  background-color: #F6F6F6;
+  margin: 0 0 0 auto;
+}
+
+.submit-button-box{
+  display: inline-block;
+  margin-top: 50rpx;
+  
+}
+.submit-button-wrapper{
+  text-align: center;
+}
+.submit-button{
+  display: inline-block;
+  width: 250rpx;
+  font-size: 30rpx;
+  margin: 30rpx;
+}

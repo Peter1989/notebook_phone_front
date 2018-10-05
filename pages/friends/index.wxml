@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="search-wrapper">
+  <input class="search-input" placeholder="搜索用户" bindinput="bindinput"></input>
+  </view>
+  <view class="friends-item-wrapper">
+    <view class="friends-item-follow" bindtap="followed">
+      <text class="followed">关注我的</text>
+      <image class="gomore" src='../../assets/to-more.png'></image>
+    </view>
+    <view class="friends-divide"></view>
+    <view class="friends-item-follow" bindtap="following">
+      <text class="following">我关注的</text>
+      <image class="gomore" src='../../assets/to-more.png'></image>
+    </view>
+  </view>
+  
+  <view class="friends-item-wrapper margin-top">
+    <navigator url="/pages/profile/index?uid={{item.uid}}" wx:for="{{friendsList}}" wx:key="item.uid">
+      <view class="friends-divide" wx:if="{{index > 0}}"></view>
+      <view class="friends-item">
+        <image class="headpic" src="{{item.headpic ? item.headpic : '../../assets/defaultheadpic.png'}}"></image>
+        <text class="username">{{item.username}}</text>
+      </view>
+    </navigator>
+  </view>
+  <view wx:if="{{!hasLogin}}" class="nomore">请您先登录～</view>
+  <view wx:if="{{hasLogin && friendsList.length === 0}}" class="nomore">您现在还没有相互关注的好友，先多记录些知识点吧～</view>
+</view>

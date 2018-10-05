@@ -1,0 +1,135 @@
+page {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+.user-info-wrap{
+  width: 750rpx;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  padding: 20rpx;
+  border-bottom: 1rpx #cdcdcd solid;
+  z-index: 10;
+}
+.headpic{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 50rpx;
+  margin-right: 30rpx;
+}
+.name{
+  font-size: 50rpx;
+}
+.headpic-line{
+  display: flex;
+  align-items: center;
+}
+
+.info-line{
+  display: flex;
+  align-items: center;
+}
+.sex-image{
+  display: block;
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 30rpx;
+}
+.district{
+  display: inline-block;
+  font-size: 25rpx;
+  margin-right: 20rpx;
+}
+.follow{
+  display: inline-block;
+  width: 120rpx;
+  color: deepskyblue;
+  font-size: 30rpx;
+}
+.message{
+  width: 200rpx;
+  margin-left: 20rpx;
+}
+.user-intro{
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+
+.card{
+  width: 750rpx;
+  background: #F6F6F6;
+  font-size: 28rpx;
+  border-top:#F6F6F6 10rpx solid;
+}
+.card-wrapper{
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.card-author-box{
+  text-align: right;
+}
+.card-author{
+  font-size: 28rpx;
+  color: #999;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+.card-title{
+  font-size: 32rpx;
+  margin: 10rpx 0;
+  color: #666;
+}
+.card-content{
+  width: 700rpx; 
+  display: -webkit-box; 
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  color: #666;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  line-height: 1.6;
+  white-space: pre-wrap!important;
+  word-wrap: break-word!important;
+}
+
+.info-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+  text-align: right;
+  line-height: 40rpx;
+}
+
+.card-liked{
+  display: inline-block;
+  margin: auto 20rpx auto 0;
+  width: 30rpx;
+  height: 30rpx;
+}
+.num-liked{
+  display:flex;
+  vertical-align: middle;
+  padding: 6rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.clicklike{
+  display: flex;
+  vertical-align: middle;
+  width: 100rpx;
+  height: 50rpx;
+  padding: 10rpx
+}
+.item-date{
+  margin-top: 10rpx;
+  color: #999;
+  font-size: 28rpx;
+}

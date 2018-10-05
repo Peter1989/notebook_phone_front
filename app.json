@@ -1,0 +1,59 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/mycard/index",
+    "pages/friends/index",
+    "pages/friends/followed/index",
+    "pages/friends/following/index",
+    "pages/mine/index",
+    "pages/mine/editprofile/index",
+    "pages/mine/editprofile/editusername/index",
+    "pages/mine/editprofile/editintro/index",
+    "pages/mine/taglist/index",
+    "pages/mine/taglist/addtag/index",
+    "pages/mine/taglist/addtagclass/index",
+    "pages/mine/addcard/index",
+    "pages/mine/likedme/index",
+    "pages/mine/marked/index",
+    "pages/mine/messagelist/index",
+    "pages/mine/messagelist/chatroom/index",
+    "pages/profile/index",
+    "pages/feedback/index"
+  ],
+  "window": {
+    "backgroundColor": "#FFF",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "随身忆",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 30
+  },
+  "tabBar":{
+    "backgroundColor": "#fff",
+    "color":"#999",
+    "selectedColor":"#1E8AE8",
+    "borderStyle":"white",
+    "list":[{
+      "selectedIconPath":"assets/home-light.png",
+      "iconPath":"assets/home.png",
+      "pagePath":"pages/index/index",
+      "text":"随身忆"
+    },{
+      "selectedIconPath":"assets/mycard-light.png",
+      "iconPath":"assets/mycard.png",
+      "pagePath":"pages/mycard/index",
+      "text":"复习"
+    },{
+      "selectedIconPath": "assets/friends-light.png",
+      "iconPath": "assets/friends.png",
+      "pagePath": "pages/friends/index",
+      "text": "好友"
+    },{
+      "selectedIconPath": "assets/mine-light.png",
+      "iconPath": "assets/mine.png",
+      "pagePath": "pages/mine/index",
+      "text": "我"
+    }]
+  }
+}

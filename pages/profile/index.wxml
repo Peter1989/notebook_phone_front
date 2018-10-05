@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="user-info-wrap">
+    <view class="headpic-line">
+      <image src="{{userInfo.headpic}}" class="headpic"></image>
+      <view>
+        <view class="info-line">
+          <text class="name">{{userInfo.username}}</text>
+          <image class="sex-image" wx:if="{{userInfo.sex == 1}}" src="../../assets/man.png"></image>
+          <image class="sex-image" wx:if="{{userInfo.sex == 2}}" src="../../assets/woman.png"></image>
+        </view>
+        <view class="info-line">
+          <text class="district">{{userInfo.district}}</text>
+          <text wx:if="{{!userInfo.isSelf}}" bindtap="handlefollow" class="follow">{{userInfo.followStatus}}</text>
+          <button wx:if="{{!userInfo.isSelf}}" data-uid="{{userInfo.id}}" class="message" size="mini" type="primary" bindtap="gotochatroom">站内信</button>
+        </view>
+      </view>
+    </view>
+    <view class="user-intro">
+      <text>{{userInfo.profile}}</text>
+    </view>
+  </view>
+  <view class="card-wrap" style="margin-top:{{height}}">
+    <view class="card">
+      <view class="card-wrapper" wx:for="{{cardList}}" wx:key="item.id">
+          <view class="card-author-box">
+            <text class="card-author" catchtap="handleauthor">{{item.tag}}</text>
+          </view>
+          <view class="card-title" data-id="{{item.id}}">{{item.question_text}}</view>
+          <!-- <textarea class="card-content" disabled="true" auto-height="true" maxlength="1000" value="{{item.answer_text}}" space="{{true}}"></textarea> -->
+          <rich-text class="card-content" nodes="{{item.answer_text}}"></rich-text>
+          <view class="info-bar">
+          <text class="item-date">{{item.datetime}}</text>
+          <view class="clicklike" id="{{item.id}}" data-index="{{index}}" data-type="{{1 - item.has_liked}}" data-targetuid="{{item.uid}}" bindtap="clickLike">
+            <image class="card-liked" src="../../assets/unliked.png" wx:if="{{item.has_liked == '0'}}"/>
+            <image class="card-liked" src="../../assets/liked.png" wx:if="{{item.has_liked == '1'}}"/>
+            <text class="num-liked">{{item.like}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

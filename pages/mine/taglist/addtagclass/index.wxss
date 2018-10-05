@@ -1,0 +1,70 @@
+.container{
+  width: 100%;
+  position: fixed;
+  top: 0rpx;
+}
+.form-item{
+  width: 700rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+.item-title{
+  display: inline-block;
+  width: 100rpx;
+  margin: 20rpx;
+  vertical-align: middle;
+}
+.belong-item-title{
+  display: inline-block;
+  width: 250rpx;
+  margin: 20rpx;
+  vertical-align: middle;
+}
+
+.title-placeholder{
+  font-size: 30rpx;
+}
+.title-input{
+  display: inline-block;
+  width: 550rpx;
+  vertical-align: middle;
+  margin: 10rpx 0rpx;
+  font-size: 30rpx;
+}
+
+.radio-group{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30rpx;
+}
+
+.radio{
+  transform:scale(0.5);
+}
+
+.title-input-tag{
+  display: inline-block;
+  width: 200rpx;
+  vertical-align: middle;
+  margin: 10rpx 0rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.level-one-name{
+  color: #444;
+}
+
+.select-tag-button{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.submit-button{
+  width: 300rpx;
+}
+
+.submit-button-wrapper{
+  margin-top: 50rpx;
+  text-align: center;
+}

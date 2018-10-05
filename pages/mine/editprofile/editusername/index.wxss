@@ -1,0 +1,35 @@
+.container{
+  width: 100%;
+  position: fixed;
+  top: 0rpx;
+}
+.form-item{
+  width: 700rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+.item-title{
+  display: inline-block;
+  width: 100rpx;
+  margin: 20rpx;
+  vertical-align: middle;
+}
+
+.title-placeholder{
+  font-size: 30rpx;
+}
+.title-input{
+  display: inline-block;
+  width: 550rpx;
+  vertical-align: middle;
+  margin: 10rpx 0rpx;
+}
+
+.submit-button{
+  width: 300rpx;
+}
+
+.submit-button-wrapper{
+  margin-top: 50rpx;
+  text-align: center;
+}

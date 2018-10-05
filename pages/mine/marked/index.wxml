@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="search-wrapper">
+    <input class="search-input" placeholder="搜索标题和内容" bindinput="bindinput"></input>
+  </view>
+
+  <!-- tab begin-->
+  <view class="tab-wrapper" wx:if="{{levelOneArr.length !== 0}}">
+    <view  class="tab-tag">
+      <picker bindchange="tagBindPickerChange" bindcolumnchange="bindColumnChange" value="{{tagIndex}}" range="{{multiArr}}" mode="multiSelector" range-key='tagname'>
+      <view class="tagtext" wx:if="{{tagbarone}}">
+        {{tagbarone}}
+        <image src="../../../assets/to-more.png" class="to-more"/>
+      </view>
+      <view class="tagtext" wx:if="{{tagbartwo}}">
+        {{tagbartwo}}
+        <image src="../../../assets/to-more.png" class="to-more"/>
+      </view>
+      <view class="tagtext" wx:if="{{tagbarthree}}">
+        {{tagbarthree}}
+      </view>
+      </picker>
+    </view>
+    <view class="taggoback" bindtap="alltags">
+      <text>复原</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-wrapper" wx:for="{{cardList}}" wx:key="id" data-qid="{{item.id}}" data-id="{{index}}" bindtap='handledelete'>
+      <view style="{{item.txtStyle}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" id="{{index}}" data-index="{{index}}"  class="address-item-top" catchtap='handleshow'>
+        <view class="card-author-box">
+          <view class="markpos">
+            <view class="mark" bindchange="switch1Change" catchtap="handleauthor">
+            <image wx:if="{{item.txtStyle === 'left:0rpx'}}" src="../../../assets/leftslide.png" class="leftslide" bindtap=""></image>
+            <text class="card-author" id="{{index}}" wx:if="{{item.tag}}" catchtap="handleauthor">{{item.tag}}</text>
+            <image wx:if="{{item.mark === '0'}}" catchtap="starMark" id="{{index}}" src="../../../assets/unstar.png" class="star"/>
+            <image wx:if="{{item.mark === '1'}}" catchtap="starMark" id="{{index}}" src="../../../assets/star.png" class="star"/>
+            <image src="../../../assets/edit.png" data-qid="{{item.id}}" catchtap="goedit" class="edit-item"/>
+          </view>
+          </view>
+        </view>
+        <view class="card-title" data-id="{{item.id}}" data-title="{{item.question_text}}">{{item.question_text}}</view>
+        <!-- <view class="card-content">{{item.answer_text}}</view> -->
+        <rich-text class="card-content" nodes="{{item.answer_text}}"></rich-text>
+      </view>
+    </view>
+  </view>
+  <view class="nomore" wx:if="{{nomore}}">没有内容了～</view>
+</view>

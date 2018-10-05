@@ -1,0 +1,14 @@
+
+<view class="container">
+  <form>
+    <view class="form-item">
+      <view class="item-title">名字</view>
+      <input class="title-input" placeholder='请输入名字' placeholder-class='title-placeholder' bindinput="bindUserName" value="{{username}}"></input>
+    </view>
+  </form>
+  <view class="submit-button-wrapper">
+    <view class="submit-button-box">
+      <button class="submit-button" type="primary" size="mini" bindtap="submit">提 交</button>
+    </view>
+  </view>
+</view>

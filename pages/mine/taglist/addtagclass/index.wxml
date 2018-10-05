@@ -1,0 +1,33 @@
+
+<view class="container">
+  <form>
+    <view class="form-item">
+      <view class="item-title">级别</view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label wx:for="{{items}}" wx:key="{{index}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" disabled="{{isEdit}}" class="radio"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="form-item" wx:if="{{level==='one'}}">
+      <view class="item-title">名称</view>
+      <input class="title-input" value="{{tagName}}" placeholder='请输入标签分类名称' placeholder-class='title-placeholder' bindinput="bindTagName"></input>
+    </view>
+    <view class="form-item" wx:if="{{level==='two'}}">
+      <view class="belong-item-title">所属一级分类</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='tagname' class="title-input-tag">
+        <text wx:if="{{!levelOneName}}">选择一级分类</text>
+        <text wx:if="{{levelOneName}}" class="level-one-name">{{levelOneName}}</text>
+      </picker>
+    </view>
+    <view class="form-item" wx:if="{{level==='two'}}">
+      <view class="item-title">名称</view>
+      <input class="title-input" value="{{tagName}}" placeholder='请输入标签分类名称' placeholder-class='title-placeholder' bindinput="bindTagName"></input>
+    </view>
+  </form>
+  <view class="submit-button-wrapper">
+    <view class="submit-button-box">
+      <button class="submit-button" type="primary" size="mini" bindtap="submit">提 交</button>
+    </view>
+  </view>
+</view>

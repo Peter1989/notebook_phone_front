@@ -1,0 +1,57 @@
+  <!-- tab begin-->
+  <view class="container">
+    <form>
+
+      <view class="form-item">
+        <view class="item-title">分类</view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArr}}" range-key='tagname' class="title-input-tag">
+          <text wx:if="{{!classText}}" class="title-placeholder">请选择标签分类 ></text>
+          <text wx:if="{{classText}}" class="title-placeholder">{{classText}}</text>
+        </picker>
+      </view>
+
+      <view class="form-item">
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radioLabel" wx:for="{{items}}" wx:key="name">
+            <radio value="{{item.name}}" checked="{{item.checked}}" class="radio"/>{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+
+      <view class="form-item">
+        <view class="item-title">标签</view>
+          <picker wx:if="{{!newtag}}" bindchange="bindPickerChange" value="{{thirdIndex}}" range="{{columnThree}}" range-key='tagname' class="title-input-tag">
+            <text wx:if="{{!tagText}}" class="title-input-tag" class='title-placeholder'>请选择标签 ></text>
+            <text wx:if="{{tagText}}" class="title-input-tag" class='title-placeholder'>{{tagText}}</text>
+          </picker>
+          <input wx:if="{{newtag}}" class="title-input-tag" bindinput="bindTagInput" placeholder="请输入标签" placeholder-class='title-placeholder'></input>
+      </view>
+    </form>
+
+      <view class="form-item">
+        <view class="item-title">标题</view>
+        <textarea class="title-input" placeholder='请输入知识点标题' placeholder-class='title-placeholder' maxlength="500" value="{{title}}" auto-height="true" bindinput="titleinput"></textarea>
+      </view>
+      <view class="form-item">
+        <view class="item-title">内容</view>
+        <textarea class="content-input" placeholder='请输入知识点内容' placeholder-class='title-placeholder' maxlength="1000" value="{{content}}" auto-height="true" bindinput="contentinput"></textarea>
+      </view>
+      
+
+    <view class="form-item">
+        <radio-group class="radio-group" bindchange="privateRadioChange">
+          <label class="radioLabel" wx:for="{{privateArr}}" wx:key="name">
+            <radio value="{{item.name}}" checked="{{item.checked == ispublic}}" class="radio"/>{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+
+    <view class="submit-button-wrapper">
+      <view class="submit-button-box">
+        <button wx:if="{{!isdetail}}" class="submit-button" size="mini" bindtap="submit" type="primary">提 交</button>
+      </view>
+    </view>
+    <view class="tab-wrapper">
+        <view class="tab-item">建议在电脑端添加知识点－网址为：www.suishouji.net</view>
+    </view>
+  </view>

@@ -1,0 +1,12 @@
+
+<view class="container">
+    <view class="form-item">
+      <view class="item-title">个人简介</view>
+      <textarea class="title-input" placeholder='请输入个人简介,最多200字。' placeholder-class='title-placeholder' bindinput="bindProfile" value="{{profile}}" maxlength="200"></textarea>
+    </view>
+  <view class="submit-button-wrapper">
+    <view class="submit-button-box">
+      <button class="submit-button" type="primary" size="mini" bindtap="submit">提 交</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="item-wrapper">
+    <view class="headpic-item" bindtap="chooseImage">
+      <text class="nickname">头像</text>
+      <view class="item-tomore">
+      <image wx:if="{{!headpic}}" class="headpic" src="../../../assets/defaultheadpic.png"></image>
+      <image wx:if="{{headpic}}" class="headpic" src="{{headpic}}"></image>
+      <image class="gomore" src='../../../assets/to-more.png'></image>
+      </view>
+    </view>
+    <view class="friends-divide"></view>
+
+    <navigator url="./editusername/index">
+      <view class="friends-item">
+        <text class="nickname">名字</text>
+        <view class="item-tomore">
+        <text class="contentinfo">{{username}}</text>
+        <image class="gomore" src='../../../assets/to-more.png'></image>
+        </view>
+      </view>
+    </navigator>
+
+    <view class="friends-divide"></view>
+    <picker bindchange="bindPickerChange" value="{{sex == 0? 0 : sex-1}}" range="{{sexarray}}">
+      <view class="friends-item">
+        <text class="nickname">性别</text>
+        <view class="item-tomore">
+        <text class="contentinfo" wx:if="{{sex == 0}}">未取到</text>
+        <text class="contentinfo" wx:if="{{sex == 1}}">男</text>
+        <text class="contentinfo" wx:if="{{sex == 2}}">女</text>
+        <image class="gomore" src='../../../assets/to-more.png'></image>
+        </view>
+      </view>
+    </picker>
+    <view class="friends-divide"></view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+    <view class="friends-item">
+      <text class="nickname">城市</text>
+      <view class="item-tomore">
+      <text class="contentinfo">{{city}}</text>
+      <image class="gomore" src='../../../assets/to-more.png'></image>
+      </view>
+    </view>
+    </picker>
+    <view class="friends-divide"></view>
+    <navigator url="./editintro/index">
+      <view class="friends-item">
+        <text class="nickname">个人简介</text>
+        <view class="item-tomore">
+        <text class="contentinfo">{{profile}}</text>
+        <image class="gomore" src='../../../assets/to-more.png'></image>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="submit-button-wrapper">
+    <view class="submit-button-box">
+      <button class="submit-button" size="small" type="primary" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">同步微信信息</button>
+      <button class="submit-button" size="small" type="warn" bindtap="logout">退出登录</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,105 @@
+<view class="container">
+  <view class="search-wrapper" wx:if="{{showSearchWrap}}">
+    <input class="search-input" focus="true" placeholder="{{searchType === 'content' ? '输入标题和内容' : '输入标签'}}" bindinput="bindSearchText"></input>
+    <button class="search-cancel-text" bindtap="cancelSearch" type="primary" size="mini">取消</button>
+    <view class="radio-line">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radioLabel" wx:for="{{items}}" wx:key="name">
+          <radio value="{{item.name}}" checked="{{item.checked}}" class="radio"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="search-wrapper" wx:if="{{!showSearchWrap}}">
+  <view class="search-input-mask" bindtap="startSearch">
+      <text class="search-input-text">搜索知识卡片</text>
+  </view>
+  </view>
+
+  <!-- tab begin-->
+  <view class="{{showSearchWrap ? 'tab-wrapper' : 'tab-wrapper-mask'}}" bindtap="setActive">
+      <view class="tab-item {{activeType == 0 ? 'tab-item-active' : ''}}" data-index="0">最新</view>
+      <view class="tab-item {{activeType == 1 ? 'tab-item-active' : ''}}" data-index="1">最热</view>
+      <view class="tab-item {{activeType == 2 ? 'tab-item-active' : ''}}" data-index="2">关注</view>
+      <view class="tab-item {{activeType == 3 ? 'tab-item-active' : ''}}" data-index="3">赞过</view>
+      <view class="tab-item-line" animation="{{animationData}}"></view>
+  </view>
+
+  <view class="{{showSearchWrap ? 'card' : 'card-mask'}}">
+    <view class="card-wrapper" wx:for="{{cardList}}" wx:key="id" id="{{index}}">
+        <view class="card-author-box">
+          <text class="card-author" id="{{index}}" data-uid="{{item.uid}}" catchtap="handleauthor">{{item.username}}{{item.tag?'·'+item.tag:''}}</text>
+        </view>
+        <view class="card-title" data-id="{{item.id}}">{{item.question_text}}</view>
+        <!-- <textarea class="card-content" disabled="true" auto-height="true" maxlength="1000" value="{{item.answer_text}}"></textarea> -->
+        <rich-text class="card-content" nodes="{{item.answer_text}}"></rich-text>
+        <view class="info-bar">
+          <text class="item-date">{{item.datetime}}</text>
+          <view class="clicklike" id="{{item.id}}" data-index="{{index}}" data-type="{{1 - item.has_liked}}" data-targetuid="{{item.uid}}" bindtap="clickLike">
+            <image class="card-liked" src="../../assets/unliked.png" wx:if="{{item.has_liked == '0'}}"/>
+            <image class="card-liked" src="../../assets/liked.png" wx:if="{{item.has_liked == '1'}}"/>
+            <text class="num-liked">{{item.like}}</text>
+          </view>
+        </view>
+    </view>
+    <view class="nomore" wx:if="{{nomore}}">没有内容了～</view>
+  </view>
+
+  <view class="home-mask" wx:if="{{!hasLogin}}">
+    <view class="login">
+      <view class="login-title">
+        <text bindtap="showLoginInput" class="{{showLogin ? 'login-active' : 'login-no-active'}}">登录</text>
+        <text class="divide-line">/</text>
+        <text bindtap="showSignupInput" class="{{showSignup ? 'login-active' : 'login-no-active'}}">注册</text>
+      </view>
+      <view wx:if="{{showLogin}}">
+        <view class="phone">
+          <text class="input-title">手机号</text>
+          <input class="phone-input" type="number" maxlength="11" bindinput="bindLoginPhone"/>
+        </view>
+        <view class="secretcode" wx:if="{{loginShowPassword}}">
+          <text class="input-title">密码</text>
+          <input class="secretcode-input" type="text" password="true" maxlength="20" bindinput="bindLoginPassword"/>
+        </view>
+        <view class="code" wx:if="{{!loginShowPassword}}">
+        <view class="code-input-wrapper">
+          <text class="input-title">验证码</text>
+          <input class="code-input" type="number" value="{{signupCode}}" bindinput="bindLoginCode" maxlength="6"/>
+        </view>
+          <button bindtap="getcode" size="mini" wx:if="{{!showCountDown}}" class="code-button">获取验证码</button>
+          <button size="mini" wx:if="{{showCountDown}}" class="code-button">请{{countDownNum}}s后尝试</button>
+        </view>
+        <view class="tips" wx:if="{{showTips}}">{{tips}}</view>
+        <view class="button-wrap">
+          <view class="button" style="color:#fff;" bindtap="login">登 录</view>
+          <view class="button" style="color:#fff;" bindtap="changeLoginway">{{loginShowPassword ? '忘记密码' : '输入密码'}}</view>
+        </view>
+      </view>
+      <view wx:if="{{showSignup}}">
+        <view class="phone">
+          <text class="input-title">手机号</text><input class="phone-input" type="number" bindinput="bindSignupPhone" maxlength="11"/>
+        </view>
+        <view class="code">
+        <view class="code-input-wrapper">
+          <text class="input-title">验证码</text>
+          <input class="code-input" type="number" value="{{signupCode}}" bindinput="bindSignupCode" maxlength="6"/>
+        </view>
+          <button bindtap="getcode" size="mini" wx:if="{{!showCountDown}}" class="code-button">获取验证码</button>
+          <button size="mini" wx:if="{{showCountDown}}" class="code-button">请{{countDownNum}}s后尝试</button>
+        </view>
+        <view class="secretcode">
+          <text class="input-title">密码</text>
+          <input class="signup-secretcode-input" type="text" password="true" maxlength="20" bindinput="bindSecretCode" placeholder="密码长度为6~20位"/>
+        </view>
+        <view class="makesureSecretcode">
+          <text class="input-title">确认</text>
+          <input class="makesureSecretcode-input" type="text" password="true" maxlength="20" bindinput="bindSecretCodeAgain" placeholder="请再次确认密码"/>
+        </view>
+        <view class="tips" wx:if="{{showTips}}">{{tips}}</view>
+        <view class="button-wrap">
+          <view class="button" style="color:#fff;" bindtap='signup'>注 册</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,83 @@
+
+.tab-wrapper{
+  width: 750rpx;
+  background: #F6F6F6;
+  border-top: 1rpx solid #F6F6F6;
+  border-bottom: 1rpx solid #F6F6F6;
+  position:fixed;
+  bottom: 0rpx;
+}
+.tab-item{
+  display: inline-block;
+  width: 750rpx;
+  font-size: 28rpx;
+  text-align: center;
+  background: #fff;
+  color: #999;
+  padding: 12rpx 0;
+}
+.form-item{
+  width: 700rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #F6F6F6;
+  padding: 20rpx;
+}
+.item-title{
+  display: inline-block;
+  width: 100rpx;
+  margin: 20rpx;
+  vertical-align: middle;
+}
+.title-placeholder{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #999;
+}
+.title-input{
+  display: block;
+  width: 700rpx;
+  margin: 10rpx 10rpx 0rpx 10rpx;
+  color: #444;
+  font-size: 30rpx;
+}
+
+.content-input{
+  display: block;
+  width: 700rpx;
+  margin: 10rpx 10rpx 0rpx 10rpx;
+  color: #444;
+  font-size: 30rpx;
+}
+
+.title-input-tag{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10rpx 0rpx;
+  font-size: 30rpx;
+}
+
+.submit-button-box{
+  display: inline-block;
+  height: 150rpx;
+  width: 200rpx;
+  margin-top: 100rpx;
+}
+.submit-button-wrapper{
+  text-align: center;
+}
+.submit-button{
+  width: 200rpx;
+}
+
+.radio-group{
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  margin-left: 20rpx;
+}
+.radio{
+  transform:scale(0.5);
+}
+.radioLabel{
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}

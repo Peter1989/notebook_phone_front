@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="friends-item-wrapper clear-margin-top">
+    <view wx:for="{{friendsList}}" wx:key="item.uid">
+      <view class="friends-divide" wx:if="{{index > 0}}"></view>
+      <view class="friends-item">
+        <view class="picandname" bindtap="gotouser" data-uid="{{item.uid}}">
+          <image class="headpic" src="{{item.headpic}}"></image>
+          <text class="username">{{item.username}}</text>
+        </view>
+        <view data-uid="{{item.uid}}" bindtap="gotochatroom">
+          <view class="title">{{item.senduser}}:{{item.message}}</view>
+          <text class="message-time">{{item.datetime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text wx:if="{{friendsList.length === 0}}" class="nomore">您现在还没有站内信～</text>
+  <text wx:if="{{nomore && friendsList.length !== 0}}" class="nomore">已经没有站内信了～</text>
+</view>

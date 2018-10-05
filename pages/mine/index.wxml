@@ -1,0 +1,48 @@
+<view class="container">
+  <view bindtap="gotoeditprofile" class="mine-wrapper">
+    <view class="headinfo">
+      <image class="headpic" src="{{headpic}}"></image>
+      <text class="nickname">{{username}}</text>
+    </view>
+      <image class="gomore" src='../../assets/to-more.png'></image>
+    </view>
+
+  <view class="item-wrapper" >
+    <view class="friends-item" bindtap="gotoaddcard">
+      <image class="itempic" src="../../assets/revise.png"></image>
+      <text class="funcname">添加知识点</text>
+    </view>
+
+    <view class="friends-divide"></view>
+
+    <view class="friends-item" bindtap="gototag">
+      <image class="itempic" src="../../assets/Label.png"></image>
+      <text class="funcname">我的标签</text>
+      <text class="tag-tips"wx:if="{{levelThreeArr.length === 0}}">(1.点我，添加标签)</text>
+    </view>
+
+    <view class="friends-divide"></view>
+    <view class="friends-item" bindtap="gotoaddmarked">
+      <image class="itempic" src="../../assets/marked.png"></image>
+      <text class="funcname">我标记的</text>
+    </view>
+    
+    <view class="friends-divide"></view>
+    <view class="friends-item" bindtap="gotolikedme">
+      <image class="itempic" src="../../assets/Collection.png"></image>
+      <text class="funcname">赞过我的</text>
+    </view>
+
+    <view class="friends-divide"></view>
+    <view class="friends-item" bindtap="gotomessagelist">
+      <image class="itempic" src="../../assets/mail.png"></image>
+      <text class="funcname">我的站内信</text>
+    </view>
+
+    <view class="friends-divide"></view>
+    <view class="friends-item" bindtap="gotofeedback">
+      <image class="itempic" src="../../assets/Headset.png"></image>
+      <text class="funcname">使用反馈</text>
+    </view>
+  </view>
+</view>

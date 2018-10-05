@@ -1,0 +1,52 @@
+<view>
+  <navigator url="./addtagclass/index" class="function-item">
+    ＋添加标签分类
+    <text class="class-tips" wx:if="{{levelOneArr.length === 0 || levelTwoArr.length === 0}}">(2.添加1级和2级分类)</text>
+  </navigator>
+  <navigator url="./addtag/index" class="function-item margin-buttom">
+    ＋添加标签
+    <text class="class-tips" wx:if="{{levelTwoArr.length !== 0 && levelThreeArr.length === 0}}">(3.添加标签)</text>
+  </navigator>
+  <view class="friends-divide-bottom"/>
+
+  <picker-view class="picker-view" indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{levelOneArr}}" style="line-height: 50px;" wx:key="item.id">{{item.tagname}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{columnTwo}}" style="line-height: 50px;" wx:key="item.id">{{item.tagname}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{columnThree}}" style="line-height: 50px;" wx:key="item.id">{{item.tagname}}</view>
+    </picker-view-column>
+  </picker-view>
+
+  <view class="friends-divide-bottom"/>
+  <view wx:if="{{currlevelonetext}}" class="tag-line curr-tips">
+    {{currlevelonetext}}
+    <view class="option">
+      <button class="option-button" size="mini" bindtap="edit" data-id="{{currleveloneid}}" data-level="one" type="primary">编辑</button>
+      <button class="option-button" size="mini" bindtap="delete" data-id="{{currleveloneid}}" data-level="one" type="warn">删除</button>
+    </view>
+  </view>
+  <view class="friends-divide"/>
+  <view wx:if="{{currleveltwotext}}" class="tag-line">
+    {{currleveltwotext}}
+    <view class="option">
+      <button class="option-button" size="mini" bindtap="edit" data-id="{{currleveltwoid}}" data-level="two" data-leveloneid="{{currleveloneid}}" data-leveltwotext="{{currleveltwotext}}" type="primary">编辑</button>
+      <button class="option-button" size="mini" bindtap="delete" data-id="{{currleveltwoid}}" data-level="two" data-leveloneid="{{currleveloneid}}" data-leveltwotext="{{currleveltwotext}}" type="warn">删除</button>
+    </view>
+    </view>
+  <view class="friends-divide"/>
+  <view wx:if="{{currlevelthreetext}}" class="tag-line">
+    {{currlevelthreetext}}
+    <view class="option">
+      <button class="option-button" size="mini" bindtap="edit" data-id="{{currlevelthreeid}}"  data-level="three" data-leveltwoid="{{currleveltwoid}}" data-leveloneid="{{currleveloneid}}" data-levelthreetext="{{currlevelthreetext}}" type="primary">编辑</button>
+      <button class="option-button" size="mini" bindtap="delete" data-id="{{currlevelthreeid}}"  data-level="three" data-leveltwoid="{{currleveltwoid}}" data-leveloneid="{{currleveloneid}}" data-levelthreetext="{{currlevelthreetext}}" type="warn">删除</button>
+    </view>
+  </view>
+
+  <view class="tab-wrapper">
+    <view class="tab-item">删除1级、2级分类后，其下级所有分类和标签将被自动删除，被删除的标签所相关的知识点会被自动归为无分类。</view>
+  </view>
+</view>
