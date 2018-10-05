@@ -8,7 +8,8 @@ Page({
   data: {
     headpic: '',
     username: '',
-    levelThreeArr: [1]
+    levelThreeArr: [1],
+    hasLogin: true
   },
 
   /**
@@ -28,17 +29,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      hasLogin: app.globalData.hasLogin
-    })
     if(app.globalData.hasLogin){
       app.getUserInfo();
     }
+
     this.setData({
+      hasLogin: app.globalData.hasLogin,
       headpic: app.globalData.headpic || '../../../assets/defaultheadpic.png',
       username: app.globalData.username || (app.globalData.hasLogin? '新用户' : '未登录')
     })
-    
+
     var that = this;
     wx.request({
       url: 'https://www.funyang.top/minipro/tag/gettags',
