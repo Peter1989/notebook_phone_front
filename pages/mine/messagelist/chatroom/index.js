@@ -23,6 +23,7 @@ Page({
       data: {
         page: page,
         size: that.data.size,
+        targetuid: that.data.targetuid
       },
       header: {
         'content-type': 'application/json',
@@ -76,6 +77,7 @@ Page({
    */
   onLoad: function (options) {
     var uid = options.uid;
+    console.log('chatroom',uid);
     var that = this;
     that.setData({
       targetuid: uid,

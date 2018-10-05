@@ -23,7 +23,7 @@
     <view class="card">
       <view class="card-wrapper" wx:for="{{cardList}}" wx:key="item.id">
           <view class="card-author-box">
-            <text class="card-author" catchtap="handleauthor">{{item.tag}}</text>
+            <text wx:if="{{item.tag}}" class="card-author" catchtap="handleauthor">{{item.tag}}</text>
           </view>
           <view class="card-title" data-id="{{item.id}}">{{item.question_text}}</view>
           <!-- <textarea class="card-content" disabled="true" auto-height="true" maxlength="1000" value="{{item.answer_text}}" space="{{true}}"></textarea> -->

@@ -116,7 +116,9 @@ Page({
             break;
         }
         console.log(followStatus)
+        res.data.headpic = res.data.headpic || '../../assets/defaultheadpic.png';
         res.data.followStatus = followStatus;
+        
         that.setData({
           userInfo: res.data
         })
@@ -276,6 +278,7 @@ Page({
   },
   gotochatroom(e){
     var uid = e.currentTarget.dataset.uid;
+    console.log(uid);
     wx.navigateTo({
       url: "/pages/mine/messagelist/chatroom/index?uid="+uid
     })
