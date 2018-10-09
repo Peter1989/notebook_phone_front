@@ -415,9 +415,13 @@ Page({
         })
 
         app.globalData.hasLogin = true;
+        app.globalData.token = res.data.token;
         that.setData({
           hasLogin: true
         })
+
+        app.getUserInfo();
+        console.log(app.globalData)
       },
       fail: function (res) {
         console.log(res)
